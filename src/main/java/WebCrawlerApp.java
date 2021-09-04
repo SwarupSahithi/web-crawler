@@ -33,7 +33,7 @@ public class WebCrawlerApp {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
-        frame.setIconImage(Toolkit.getDefaultToolkit().getImage("./src/main/resources/application.png"));
+        frame.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("application.png")));
         frame.add(panel);
         panel.setLayout(null);
 
@@ -144,7 +144,7 @@ public class WebCrawlerApp {
     }
 
     private boolean isValidCrawlingCount() {
-        return txtCrawlingCount.getText().matches("[+]?[0-9]");
+        return txtCrawlingCount.getText().matches("[+]?[0-9]*");
     }
 
     private void setDefaultValues() {
