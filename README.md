@@ -12,7 +12,7 @@ This is a Java Swing Application used to crawl web applications.
 1. Clone this project
 2. Navigate to the project home directory
 3. Open a command line/terminal
-4. Run `***mvn clean install***`
+4. Run ***`mvn clean install`***
 5. Navigate to "***<project_home_dir>/target***"
 6. Double click on "***web-crawler-app.exe***"
 7. Input web page URL and crawling count
