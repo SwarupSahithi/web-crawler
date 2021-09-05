@@ -1,8 +1,3 @@
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-
 import javax.swing.*;
 import java.awt.*;
 import java.net.URL;
@@ -24,8 +19,6 @@ public class WebCrawlerApp {
     private final JPanel panel = new JPanel();
     private final Font font = new Font("SansSerif", Font.PLAIN, 18);
     private JTextField txtWebPageUrl, txtCrawlingCount;
-
-    private WebDriver driver;
 
     public WebCrawlerApp() {
         frame = new JFrame("Web Crawler App");
@@ -86,30 +79,18 @@ public class WebCrawlerApp {
 
             try {
                 if (isValidUrl()) {
-
                     if (isValidCrawlingCount()) {
-                        WebDriverManager.chromedriver().setup();
-                        ChromeOptions chromeOptions = new ChromeOptions();
-                        chromeOptions.addArguments("--headless");
-                        chromeOptions.addArguments("start-maximized");
-                        driver = new ChromeDriver(chromeOptions);
-
                         int crawlingCount = Integer.parseInt(txtCrawlingCount.getText());
-
-                        new WebCrawler(driver).crawl(txtWebPageUrl.getText(), crawlingCount);
+                        new WebCrawler().crawl(txtWebPageUrl.getText(), crawlingCount);
                         submissionStatus = "Crawling has successfully ran " + crawlingCount + " time(s)!";
-
-                        driver.quit();
                     } else {
                         txtCrawlingCount.setText("");
                         submissionStatus = "Invalid Crawling Count!";
                     }
-
                 } else {
                     txtWebPageUrl.setText("");
                     submissionStatus = "Invalid Web Page URL!";
                 }
-
             } catch (Exception ex) {
                 submissionStatus = "Crawling has failed!";
             }
