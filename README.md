@@ -2,7 +2,7 @@
 ## Introduction
 This is a Java Swing Application used to crawl web applications.
 
-[![Web Crawler](https://user-images.githubusercontent.com/9147189/132093639-4ac707db-630e-456a-b688-05ba6d886830.png "Web Crawler")](https://user-images.githubusercontent.com/9147189/132093639-4ac707db-630e-456a-b688-05ba6d886830.png "Web Crawler")
+[![Web Crawler](https://user-images.githubusercontent.com/9147189/138921617-2acc4861-9ed5-4f04-bbe5-8db16994b899.png "Web Crawler")](https://user-images.githubusercontent.com/9147189/138921617-2acc4861-9ed5-4f04-bbe5-8db16994b899.png "Web Crawler")
 
 ## Prerequisites
 * Java 8
