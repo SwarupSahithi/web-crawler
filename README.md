@@ -18,4 +18,4 @@ This is a Java Swing Application used to crawl web applications.
 7. Input web page URL and crawling count
 8. Click on "***Submit***" button
 
-![Successful Crawling](https://user-images.githubusercontent.com/9147189/132093611-cdbda214-b7d9-4bbe-8e26-03417f5aa5e1.png)
+![Successful Crawling](https://user-images.githubusercontent.com/9147189/138922129-4962f5c4-6e2a-4335-9344-40d8fae857ff.png)
