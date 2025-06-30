@@ -140,6 +140,12 @@
             <artifactId>webdrivermanager</artifactId>
             <version>3.6.1</version>
         </dependency>
-    </dependencies>
+        <dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.30</version> <!-- ✅ Use a recent version -->
+    <scope>provided</scope>
+</dependency>
+   </dependencies>
 
 </project>
