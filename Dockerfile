@@ -1,14 +1,23 @@
-# Use OpenJDK base image
+# ---------- Stage 1: Build JAR ----------
+FROM maven:3.9.6-eclipse-temurin-17 AS builder
+
+# Set working directory inside container
+WORKDIR /build
+
+# Copy project files to the container
+COPY . .
+
+# Build the project using Maven
+RUN mvn clean package -DskipTests
+
+# ---------- Stage 2: Run the app ----------
 FROM openjdk:17-jdk-slim
 
-# Set the working directory
+# Set working directory
 WORKDIR /app
 
-# Copy the JAR file into the container
-COPY target/web-crawler-1.0-SNAPSHOT.jar app.jar
+# Copy the shaded JAR from the builder stage
+COPY --from=builder /build/target/web-crawler-1.0-SNAPSHOT-shaded.jar app.jar
 
-# Expose port (optional, if your app serves web content)
-# EXPOSE 8080
-
-# Command to run the JAR file
+# Entry point
 ENTRYPOINT ["java", "-jar", "app.jar"]
